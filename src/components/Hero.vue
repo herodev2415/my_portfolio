@@ -12,11 +12,16 @@ const scrollToSection = (sectionId) => {
 <template>
   <section id="accueil" class="min-h-screen flex items-center justify-center px-4 pt-16">
     <div class="text-center max-w-4xl mx-auto">
-      <!-- Avatar -->
+      <!-- Avatar avec photo - Plus grand et visible -->
       <div class="mb-8 animate-fade-in">
-        <div class="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 p-1">
-          <div class="w-full h-full rounded-full bg-slate-900 flex items-center justify-center text-5xl font-bold">
-            HA
+        <div class="w-48 h-48 md:w-56 md:h-56 mx-auto mb-6 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 p-1.5 shadow-2xl shadow-purple-500/50">
+          <div class="w-full h-full rounded-full bg-slate-900 overflow-hidden">
+            <img 
+              src="/bg hero.jpg" 
+              alt="Heritiana Andrianantenaina"
+              class="w-full h-full object-cover"
+              @error="(e) => e.target.parentElement.innerHTML = '<div class=\'w-full h-full flex items-center justify-center text-5xl font-bold\'>HA</div>'"
+            />
           </div>
         </div>
       </div>
@@ -42,10 +47,10 @@ const scrollToSection = (sectionId) => {
       <!-- Boutons d'action -->
       <div class="flex flex-wrap gap-4 justify-center mb-8">
         <button 
-          @click="scrollToSection('projets')"
+          @click="scrollToSection('realisations')"
           class="px-8 py-3 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full font-semibold hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-300 transform hover:scale-105"
         >
-          Voir mes projets
+          Voir mes réalisations
         </button>
         <button 
           @click="scrollToSection('contact')"

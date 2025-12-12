@@ -2,17 +2,16 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 import Navbar from './components/Navbar.vue'
 import Hero from './components/Hero.vue'
-import ProjectsSection from './components/ProjectsSection.vue'
+import RealisationsSection from './components/RealisationsSection.vue'
 import SkillsSection from './components/SkillsSection.vue'
 import ContactSection from './components/ContactSection.vue'
 import Footer from './components/Footer.vue'
 
-// Scroll spy
 const activeSection = ref('accueil')
 
 const updateActiveSection = () => {
-  const sections = ['accueil', 'projets', 'competences', 'contact'] // backend retiré
-
+  const sections = ['accueil', 'realisations', 'competences', 'contact']
+  
   for (const section of sections) {
     const element = document.getElementById(section)
     if (element) {
@@ -35,10 +34,10 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="min-h-screen bg-slate-900 text-white">
+  <div class="min-h-screen">
     <Navbar :active-section="activeSection" />
     <Hero />
-    <ProjectsSection />
+    <RealisationsSection />
     <SkillsSection />
     <ContactSection />
     <Footer />

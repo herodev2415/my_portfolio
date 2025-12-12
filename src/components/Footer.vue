@@ -41,18 +41,10 @@ const scrollToSection = (sectionId) => {
             </li>
             <li>
               <button
-                @click="scrollToSection('projets')"
+                @click="scrollToSection('realisations')"
                 class="text-gray-400 hover:text-purple-400 transition-colors text-sm"
               >
-                Projets Frontend
-              </button>
-            </li>
-            <li>
-              <button
-                @click="scrollToSection('backend')"
-                class="text-gray-400 hover:text-purple-400 transition-colors text-sm"
-              >
-                API & Backend
+                Réalisations
               </button>
             </li>
             <li>
@@ -61,6 +53,14 @@ const scrollToSection = (sectionId) => {
                 class="text-gray-400 hover:text-purple-400 transition-colors text-sm"
               >
                 Compétences
+              </button>
+            </li>
+            <li>
+              <button
+                @click="scrollToSection('contact')"
+                class="text-gray-400 hover:text-purple-400 transition-colors text-sm"
+              >
+                Contact
               </button>
             </li>
           </ul>
