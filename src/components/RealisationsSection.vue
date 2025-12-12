@@ -13,51 +13,52 @@ const allProjects = [
     tech: ["React.js", "Tailwind CSS", "API REST"],
     category: "frontend",
     type: "Interface Web",
-    image: "/public/annonce.png",
+    image: "/annonce.png",
     github: "https://github.com/herodev2415/petites-annonces",
     demo: null
 },
-  
-  {
+
+{
     title: "Application Quiz",
     description: "Quiz interactif avec système de score, timer et catégories multiples pour tester vos connaissances",
     tech: ["JavaScript", "HTML5", "CSS3"],
     category: "frontend",
     type: "Interface Web",
-    image: "/public/quizz.png",
+    image: "/quizz.png",
     github: "https://github.com/herodev2415/Quizz",
     demo: null
-  },
-  {
+},
+{
     title: "Calculatrice Scientifique",
     description: "Calculatrice moderne avec fonctions scientifiques avancées et interface responsive élégante",
     tech: ["JavaScript", "HTML5", "CSS3"],
     category: "frontend",
     type: "Interface Web",
-    image: "/public/calculatrice1.png",
+    image: "/calculatrice1.png",
     github: "https://github.com/herodev2415/calculator",
     demo: null
-  },
-  {
+},
+{
     title: "Brochure Professionnelle",
     description: "Site web de présentation avec design moderne, animations fluides et sections dynamiques",
     tech: ["HTML5", "CSS3", "JavaScript"],
     category: "frontend",
     type: "Interface Web",
-    image: "/public/brochure.png",
+    image: "/brochure.png",
     github: "https://github.com/herodev2415/brochure-heritiana",
     demo: null
-  },
-  {
+},
+{
     title: "CV Interactif",
     description: "CV en ligne avec design élégant, animations subtiles et sections organisées professionnellement",
     tech: ["HTML5", "CSS3", "JavaScript"],
     category: "frontend",
     type: "Interface Web",
-    image: "/public/cv.png",
+    image: "/cv.png",
     github: "https://github.com/herodev2415/cv_heritiana",
     demo: null
-  },
+},
+
   {
     title: "Gestionnaire de Tâches",
     description: "Application de gestion de tâches avec drag & drop, système de priorités et filtres intelligents",
