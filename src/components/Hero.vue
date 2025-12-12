@@ -17,7 +17,7 @@ const scrollToSection = (sectionId) => {
         <div class="w-48 h-48 md:w-56 md:h-56 mx-auto mb-6 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 p-1.5 shadow-2xl shadow-purple-500/50">
           <div class="w-full h-full rounded-full bg-slate-900 overflow-hidden">
             <img 
-              src="/bg hero.jpg" 
+              src="/bg-hero.jpg" 
               alt="Heritiana Andrianantenaina"
               class="w-full h-full object-cover"
               @error="(e) => e.target.parentElement.innerHTML = '<div class=\'w-full h-full flex items-center justify-center text-5xl font-bold\'>HA</div>'"
