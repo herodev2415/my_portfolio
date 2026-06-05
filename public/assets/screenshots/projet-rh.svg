@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760">
+<defs>
+  <linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2563eb"/><stop offset="1" stop-color="#0f766e"/></linearGradient>
+  <filter id="shadow"><feDropShadow dx="0" dy="22" stdDeviation="24" flood-opacity=".23"/></filter>
+</defs>
+<rect width="1200" height="760" rx="42" fill="#f8fafc"/>
+<rect x="48" y="48" width="1104" height="664" rx="34" fill="url(#g)" filter="url(#shadow)"/>
+<circle cx="1010" cy="110" r="150" fill="rgba(255,255,255,.14)"/>
+<circle cx="105" cy="675" r="220" fill="rgba(255,255,255,.10)"/>
+<rect x="88" y="94" width="1024" height="78" rx="22" fill="rgba(255,255,255,.18)"/>
+<circle cx="128" cy="133" r="10" fill="white" opacity=".9"/><circle cx="162" cy="133" r="10" fill="white" opacity=".65"/><circle cx="196" cy="133" r="10" fill="white" opacity=".42"/>
+<text x="86" y="255" font-family="Inter,Segoe UI,Arial" font-size="62" font-weight="900" fill="white">Système RH Entreprise</text>
+<text x="90" y="315" font-family="Inter,Segoe UI,Arial" font-size="28" font-weight="600" fill="rgba(255,255,255,.84)">Dashboard RH • Congés • Présences • Contrats</text>
+<rect x="80" y="395" rx="18" width="92" height="36" fill="rgba(255,255,255,.18)"/><text x="94" y="418" font-size="14" font-weight="700" fill="white">Employés</text><rect x="184" y="395" rx="18" width="76" height="36" fill="rgba(255,255,255,.18)"/><text x="198" y="418" font-size="14" font-weight="700" fill="white">Congés</text><rect x="272" y="395" rx="18" width="116" height="36" fill="rgba(255,255,255,.18)"/><text x="286" y="418" font-size="14" font-weight="700" fill="white">Évaluations</text><rect x="400" y="395" rx="18" width="108" height="36" fill="rgba(255,255,255,.18)"/><text x="414" y="418" font-size="14" font-weight="700" fill="white">Historique</text>
+<g transform="translate(690 260)">
+  <rect x="0" y="0" width="350" height="255" rx="26" fill="white" opacity=".95"/>
+  <rect x="30" y="34" width="178" height="18" rx="9" fill="#e2e8f0"/><rect x="30" y="72" width="288" height="13" rx="7" fill="#cbd5e1"/>
+  <rect x="30" y="112" width="85" height="70" rx="18" fill="#2563eb" opacity=".17"/><rect x="132" y="112" width="85" height="70" rx="18" fill="#0f766e" opacity=".17"/><rect x="234" y="112" width="85" height="70" rx="18" fill="#0f172a" opacity=".09"/>
+  <rect x="30" y="205" width="288" height="13" rx="7" fill="#e2e8f0"/><rect x="30" y="230" width="188" height="11" rx="6" fill="#e2e8f0"/>
+</g>
+</svg>
