@@ -1,678 +1,799 @@
 export const projects = [
   {
-    "slug": "projet-rh",
-    "folder": "projet-rh",
-    "title": "Système RH Entreprise — Gestion complète des employés, congés et rôles",
-    "short": "Application RH fullstack conçue pour centraliser les processus internes : employés, contrats, congés, présences, évaluations, tâches et utilisateurs. Le projet combine un frontend Vue.js structuré et une API Express/MySQL sécurisée par JWT.",
-    "context": "Ce projet répond au besoin d’une entreprise qui veut sortir d’une gestion RH dispersée entre fichiers Excel, emails et validations informelles. L’objectif est de créer une application interne où les administrateurs, chefs et employés disposent chacun d’un accès adapté à leurs responsabilités.",
-    "problem": "Le problème principal résolu est la perte de visibilité sur les informations RH : qui est en congé, quel contrat arrive à échéance, quelles présences sont enregistrées, quelles évaluations sont suivies, et quelles actions ont été réalisées par les utilisateurs.",
-    "value": "La valeur utilisateur est opérationnelle : moins de saisies manuelles, une meilleure traçabilité, une consultation plus rapide des dossiers employés et une séparation claire des droits entre admin, chef et employé.",
-    "tech": [
-      "Vue.js",
-      "Vue Router",
-      "Stores Vue personnalisés",
-      "Axios",
-      "Tailwind CSS",
-      "Chart.js",
-      "Node.js",
-      "Express.js",
-      "MySQL",
-      "mysql2",
-      "JWT",
-      "bcrypt / bcryptjs",
-      "Multer",
-      "Nodemailer",
-      "dotenv",
-      "CORS",
-      "Vite",
-      "Git/GitHub"
+    slug: 'projet-rh',
+    folder: 'projet-rh',
+
+    title: 'SIRH',
+    fullTitle: 'Système RH Entreprise — Gestion complète des employés, congés et rôles',
+    type: 'Application RH',
+    badge: 'Fullstack RH',
+    level: 'Projet avancé',
+    category: 'Gestion RH',
+    complexity: 'Fullstack métier',
+
+    image: '/assets/screenshots/projet-rh-cover.jpg',
+    cover: '/assets/screenshots/projet-rh-cover.jpg',
+    images: ['/assets/screenshots/projet-rh-cover.jpg'],
+
+    short:
+      'Application RH fullstack pour gérer les employés, congés, contrats, présences, rôles et statistiques.',
+
+    context:
+      'Ce projet centralise les processus RH d’une entreprise : employés, contrats, congés, présences, évaluations, tâches et utilisateurs.',
+
+    problem:
+      'Le problème principal est la perte de visibilité sur les informations RH : congés, contrats, présences, évaluations et actions utilisateurs.',
+
+    value:
+      'L’utilisateur gagne du temps, réduit les saisies manuelles et suit les dossiers employés avec plus de clarté.',
+
+    highlight:
+      'Une application métier complète avec rôles, API REST, MySQL, tableaux de bord et gestion RH structurée.',
+
+    tech: [
+      'Vue.js',
+      'Vue Router',
+      'Axios',
+      'Tailwind CSS',
+      'Chart.js',
+      'Node.js',
+      'Express.js',
+      'MySQL',
+      'JWT',
+      'bcrypt',
+      'Multer',
+      'Nodemailer',
+      'Vite',
+      'Git/GitHub'
     ],
-    "features": [
-      "Authentification avec token JWT",
-      "Redirection selon rôle : admin, chef ou employé",
-      "Gestion CRUD des employés avec photo",
-      "Gestion des congés avec validation et statuts",
-      "Gestion des contrats",
-      "Présences et suivi des statuts",
-      "Évaluations de performance",
-      "Tableau de bord et statistiques",
-      "Historique des actions",
-      "Réinitialisation de mot de passe par email",
-      "Suggestions de remplaçants",
-      "Gestion des tâches",
-      "Protection des routes côté frontend"
+
+    features: [
+      'Authentification JWT',
+      'Redirection selon rôle',
+      'Gestion CRUD des employés',
+      'Gestion des congés',
+      'Gestion des contrats',
+      'Présences et statuts',
+      'Évaluations de performance',
+      'Dashboard et statistiques',
+      'Historique des actions',
+      'Réinitialisation mot de passe',
+      'Gestion des tâches',
+      'Routes protégées'
     ],
-    "modules_visible": [
-      "Login avec affichage/masquage du mot de passe",
-      "Dashboard RH",
-      "Employés",
-      "Congés",
-      "Contrats",
-      "Présences",
-      "Évaluations",
-      "Utilisateurs",
-      "Profil employé",
-      "Demande de congé employé",
-      "Sidebar/NavBar",
-      "Cartes statistiques",
-      "Graphiques de congés"
+
+    modules_visible: [
+      'Login',
+      'Dashboard RH',
+      'Employés',
+      'Congés',
+      'Contrats',
+      'Présences',
+      'Évaluations',
+      'Utilisateurs',
+      'Profil employé',
+      'Demande de congé',
+      'Cartes statistiques',
+      'Graphiques'
     ],
-    "ux": [
-      "Interface métier orientée productivité",
-      "Cartes et tableaux pour lecture rapide",
-      "Séparation claire des parcours admin/chef/employé",
-      "Formulaires complets avec messages d’erreur",
-      "Design clair avec cards et ombres douces",
-      "Navigation protégée pour éviter les écrans non autorisés"
+
+    ux: [
+      'Interface métier productive',
+      'Cartes et tableaux lisibles',
+      'Parcours séparés admin, chef et employé',
+      'Formulaires clairs',
+      'Navigation protégée par rôle'
     ],
-    "challenges": [
-      "Structurer une application avec plusieurs rôles et plusieurs parcours utilisateur",
-      "Protéger les endpoints sensibles sans bloquer les actions légitimes des employés",
-      "Gérer les photos employés en upload ou base64",
-      "Maintenir la cohérence entre employés, utilisateurs, chefs et départements",
-      "Tracer les actions importantes dans un historique exploitable",
-      "Transformer des champs complexes comme compétences et tâches en données stockables"
+
+    challenges: [
+      'Gérer plusieurs rôles utilisateur',
+      'Sécuriser les endpoints sensibles',
+      'Gérer les photos employés',
+      'Relier employés, utilisateurs et départements',
+      'Tracer les actions importantes'
     ],
-    "solutions": [
-      "Mise en place de middlewares d’authentification JWT et d’autorisation par rôle",
-      "Découpage backend en routes, contrôleurs, middlewares et utilitaires",
-      "Utilisation de requêtes préparées MySQL pour limiter les injections SQL",
-      "Stockage structuré des compétences/tâches en JSON côté base",
-      "Gestion Multer pour les fichiers et conversion base64 si nécessaire",
-      "Router Vue avec meta.roles et garde globale beforeEach",
-      "Centralisation de l’état utilisateur dans un store",
-      "Ajout d’un module historique pour conserver la trace des opérations"
+
+    solutions: [
+      'Middlewares JWT et autorisation par rôle',
+      'Backend structuré en routes et contrôleurs',
+      'Requêtes préparées MySQL',
+      'Router Vue avec meta.roles',
+      'Store utilisateur centralisé',
+      'Module historique'
     ],
-    "skills": [
-      "Conception d’une architecture fullstack modulaire",
-      "Modélisation de processus RH réels",
-      "Gestion fine des rôles et permissions",
-      "Création d’API REST sécurisées",
-      "Connexion Vue.js ↔ Express ↔ MySQL",
-      "Débogage de workflows multi-écrans",
-      "Amélioration UX pour application de gestion"
+
+    skills: [
+      'Architecture fullstack',
+      'Gestion des rôles',
+      'API REST sécurisée',
+      'Connexion Vue.js, Express et MySQL',
+      'UX d’application métier'
     ],
-    "practices": [
-      "Architecture MVC côté backend avec séparation routes/contrôleurs/middlewares",
-      "Routes protégées côté frontend et backend",
-      "Validation des champs obligatoires",
-      "Hashage des mots de passe",
-      "Variables d’environnement pour la configuration",
-      "Organisation des vues par domaine métier",
-      "Composants réutilisables pour navigation, alertes, statistiques et graphiques",
-      "Historique applicatif pour la maintenabilité fonctionnelle"
+
+    practices: [
+      'Architecture MVC',
+      'Routes protégées',
+      'Validation des champs',
+      'Hashage mot de passe',
+      'Variables d’environnement',
+      'Composants réutilisables'
     ],
-    "future": [
-      "Créer un système de notifications internes",
-      "Ajouter des tests unitaires et d’intégration",
-      "Ajouter une pagination serveur sur les listes longues",
-      "Renforcer la validation avec un schéma type Zod/Joi",
-      "Préparer un déploiement Docker complet",
-      "Ajouter des exports PDF/Excel pour les rapports RH",
-      "Améliorer l’accessibilité clavier et lecteurs d’écran"
+
+    future: [
+      'Notifications internes',
+      'Tests unitaires',
+      'Pagination serveur',
+      'Exports PDF/Excel',
+      'Déploiement Docker',
+      'Accessibilité améliorée'
     ],
-    "recruiter": "Projet très pertinent pour un recruteur fullstack : il montre la capacité à concevoir une application métier complète, gérer des rôles, sécuriser une API, connecter un frontend Vue.js à MySQL et transformer un besoin administratif réel en outil utilisable.",
-    "image": "/assets/screenshots/projet-rh-cover.jpg",
-    "badge": "Fullstack RH",
-    "level": "Projet avancé",
-    "sources": "Code inspecté : backend Express/MySQL, contrôleurs employés/congés/présences/utilisateurs, router Vue, vues Dashboard/Login/Employé.",
-    "category": "Gestion RH",
-    "complexity": "Fullstack métier",
-    "highlight": "La valeur utilisateur est opérationnelle : moins de saisies manuelles, une meilleure traçabilité, une consultation plus rapide des dossiers employés et une séparation claire des droits entre admin, chef et employé."
+
+    recruiter:
+      'Projet pertinent pour un profil fullstack : il montre la capacité à concevoir une application métier complète, gérer des rôles, sécuriser une API et connecter Vue.js à MySQL.',
+
+    sources:
+      'Code inspecté : backend Express/MySQL, contrôleurs employés/congés/présences/utilisateurs, router Vue, vues Dashboard/Login/Employé.'
   },
+
   {
-    "slug": "reseau-social",
-    "folder": "reseau-social",
-    "title": "Social Connect Platform — Réseau social moderne avec Supabase Realtime",
-    "short": "Plateforme sociale fullstack construite avec React, TypeScript, Tailwind CSS et Supabase. Elle couvre les fonctions clés d’un réseau social : feed, profils, amis, messages, groupes, notifications, stories, médias et historique d’appels.",
-    "context": "Le projet vise à reproduire les fondations d’une application sociale moderne, avec un frontend riche, une authentification réelle, une base PostgreSQL, du storage média et des flux temps réel.",
-    "problem": "Créer un réseau social fiable exige de synchroniser plusieurs domaines complexes : identité utilisateur, publications, réactions, commentaires, conversations, notifications, groupes et droits d’accès aux données.",
-    "value": "L’utilisateur obtient une expérience sociale complète : publier, commenter, aimer, chercher des profils, ajouter des amis, envoyer des messages, rejoindre des groupes et recevoir des notifications.",
-    "tech": [
-      "React 18",
-      "TypeScript",
-      "Vite",
-      "Tailwind CSS",
-      "React Router",
-      "Supabase Auth",
-      "Supabase PostgreSQL",
-      "Supabase Storage",
-      "Supabase Realtime",
-      "RLS SQL",
-      "Radix UI / composants type shadcn",
-      "Lucide React",
-      "React Hook Form",
-      "Zod",
-      "Sonner",
-      "date-fns",
-      "ESLint",
-      "Vercel config"
+    slug: 'reseau-social',
+    folder: 'reseau-social',
+
+    title: 'Réseau social',
+    fullTitle: 'Social Connect Platform — Réseau social moderne avec Supabase Realtime',
+    type: 'Application sociale',
+    badge: 'Fullstack social app',
+    level: 'Projet avancé',
+    category: 'Réseau social',
+    complexity: 'Realtime & UX sociale',
+
+    image: '/assets/screenshots/reseau-social-cover.jpg',
+    cover: '/assets/screenshots/reseau-social-cover.jpg',
+    images: ['/assets/screenshots/reseau-social-cover.jpg'],
+
+    short:
+      'Plateforme sociale moderne avec feed, profils, amis, messages, groupes, notifications et médias.',
+
+    context:
+      'Le projet reproduit les bases d’une application sociale moderne avec authentification, base PostgreSQL, stockage média et temps réel.',
+
+    problem:
+      'Un réseau social demande de synchroniser utilisateurs, publications, réactions, commentaires, messages, notifications et groupes.',
+
+    value:
+      'L’utilisateur peut publier, commenter, aimer, rechercher des profils, ajouter des amis, envoyer des messages et recevoir des notifications.',
+
+    highlight:
+      'Une application sociale complète avec feed, profils, messagerie, notifications et logique temps réel.',
+
+    tech: [
+      'React 18',
+      'TypeScript',
+      'Vite',
+      'Tailwind CSS',
+      'React Router',
+      'Supabase Auth',
+      'Supabase PostgreSQL',
+      'Supabase Storage',
+      'Supabase Realtime',
+      'RLS SQL',
+      'Radix UI',
+      'Lucide React',
+      'React Hook Form',
+      'Zod'
     ],
-    "features": [
-      "Connexion et inscription",
-      "RouteGuard pour pages protégées",
-      "Feed avec posts et médias",
-      "Création de publication",
-      "Likes/réactions/commentaires",
-      "Profils utilisateurs enrichis",
-      "Demandes d’amis avec statuts",
-      "Recherche utilisateurs",
-      "Messages et conversations",
-      "Upload média Supabase Storage",
-      "Compression avatar côté frontend",
-      "Notifications temps réel",
-      "Groupes et détail de groupe",
-      "Stories",
-      "Historique d’appels audio/vidéo",
-      "Politiques RLS Supabase"
+
+    features: [
+      'Connexion et inscription',
+      'Pages protégées',
+      'Feed avec posts',
+      'Création de publication',
+      'Likes et commentaires',
+      'Profils utilisateurs',
+      'Demandes d’amis',
+      'Recherche utilisateurs',
+      'Messages',
+      'Upload média',
+      'Notifications temps réel',
+      'Groupes',
+      'Stories',
+      'Historique d’appels',
+      'RLS Supabase'
     ],
-    "modules_visible": [
-      "LoginPage",
-      "RegisterPage",
-      "FeedPage",
-      "ProfilePage",
-      "FriendsPage",
-      "MessagesPage",
-      "NotificationsPage",
-      "SearchPage",
-      "SettingsPage",
-      "GroupsPage",
-      "GroupDetailPage",
-      "CallsPage",
-      "Navbar responsive",
-      "PostCard",
-      "CommentSection",
-      "CreatePostForm",
-      "ReactionPicker"
+
+    modules_visible: [
+      'LoginPage',
+      'RegisterPage',
+      'FeedPage',
+      'ProfilePage',
+      'FriendsPage',
+      'MessagesPage',
+      'NotificationsPage',
+      'SearchPage',
+      'SettingsPage',
+      'GroupsPage',
+      'Navbar responsive',
+      'PostCard',
+      'CommentSection',
+      'CreatePostForm'
     ],
-    "ux": [
-      "Layout type réseau social avec navigation persistante",
-      "Chargement différé des pages via lazy loading",
-      "Feedback utilisateur via toast",
-      "Cartes de posts structurées",
-      "Écrans de profil riches : bio, amis, photos, posts",
-      "Formulaires de paramètres et mot de passe",
-      "Composants UI cohérents et réutilisables"
+
+    ux: [
+      'Layout type réseau social',
+      'Navigation persistante',
+      'Cartes de posts structurées',
+      'Feedback utilisateur avec toast',
+      'Profil utilisateur riche',
+      'Composants UI cohérents'
     ],
-    "challenges": [
-      "Synchroniser l’état utilisateur entre Supabase Auth, profils et routes protégées",
-      "Éviter les erreurs d’affichage sur les profils et amitiés",
-      "Gérer les notifications et les demandes d’amis sans doublons incohérents",
-      "Mettre en place une base Supabase complète avec RLS",
-      "Gérer l’upload média, les avatars et la compression image",
-      "Découper un projet social volumineux en composants maintenables"
+
+    challenges: [
+      'Synchroniser l’état utilisateur',
+      'Gérer profils et amitiés',
+      'Éviter les notifications incohérentes',
+      'Mettre en place Supabase avec RLS',
+      'Gérer les médias',
+      'Découper un projet volumineux'
     ],
-    "solutions": [
-      "Utilisation d’un AuthContext et d’un RouteGuard",
-      "Découpage en pages lazy-loaded pour réduire le coût initial",
-      "Schéma SQL complet avec tables profiles, posts, comments, likes, friendships, messages, notifications, groups et calls",
-      "Politiques RLS pour sécuriser les accès aux données",
-      "Upsert de profil et stockage dans un bucket media",
-      "Toasts pour informer clairement l’utilisateur",
-      "Fonctions de rafraîchissement ciblées sur les posts/profils pour éviter de recharger toute l’application"
+
+    solutions: [
+      'AuthContext et RouteGuard',
+      'Pages lazy-loaded',
+      'Schéma SQL complet',
+      'Politiques RLS',
+      'Bucket média Supabase',
+      'Toasts utilisateur',
+      'Rafraîchissement ciblé des données'
     ],
-    "skills": [
-      "React avancé avec TypeScript",
-      "Architecture frontend modulaire",
-      "Sécurisation Supabase avec RLS",
-      "Gestion de l’authentification et de la session",
-      "Gestion d’un modèle relationnel social",
-      "Temps réel et notifications",
-      "UX d’application sociale complexe"
+
+    skills: [
+      'React avec TypeScript',
+      'Architecture frontend modulaire',
+      'Sécurité Supabase',
+      'Gestion de session',
+      'Temps réel',
+      'UX sociale'
     ],
-    "practices": [
-      "TypeScript pour réduire les erreurs de contrat",
-      "Routes protégées",
-      "Lazy loading des pages",
-      "Composants UI atomiques",
-      "Séparation contexts/components/pages",
-      "Validation des formulaires",
-      "Gestion des erreurs utilisateur",
-      "Stockage média centralisé",
-      "RLS côté base de données"
+
+    practices: [
+      'TypeScript',
+      'Routes protégées',
+      'Lazy loading',
+      'Composants réutilisables',
+      'Validation des formulaires',
+      'Gestion des erreurs',
+      'Stockage média'
     ],
-    "future": [
-      "Ajouter la pagination infinie du feed",
-      "Renforcer la modération des contenus",
-      "Créer des Edge Functions pour appels/WebRTC",
-      "Ajouter tests E2E",
-      "Optimiser les requêtes Supabase avec vues/RPC supplémentaires",
-      "Ajouter un mode hors-ligne partiel",
-      "Améliorer les paramètres de confidentialité"
+
+    future: [
+      'Pagination infinie',
+      'Modération de contenu',
+      'Appels/WebRTC',
+      'Tests E2E',
+      'Optimisation Supabase',
+      'Mode hors-ligne',
+      'Paramètres de confidentialité'
     ],
-    "recruiter": "Projet très différenciant : il montre une compréhension des applications modernes orientées produit, avec TypeScript, Supabase, temps réel, sécurité base de données et expérience utilisateur riche.",
-    "image": "/assets/screenshots/reseau-social-cover.jpg",
-    "badge": "Fullstack social app",
-    "level": "Projet avancé",
-    "sources": "Code inspecté : README, routes React, pages Feed/Profile/Messages/Notifications/Settings, schéma Supabase et RLS.",
-    "category": "Réseau social",
-    "complexity": "Realtime & UX sociale",
-    "highlight": "L’utilisateur obtient une expérience sociale complète : publier, commenter, aimer, chercher des profils, ajouter des amis, envoyer des messages, rejoindre des groupes et recevoir des notifications."
+
+    recruiter:
+      'Projet différenciant : il montre une compréhension des applications modernes orientées produit, avec TypeScript, Supabase, temps réel et expérience utilisateur riche.',
+
+    sources:
+      'Code inspecté : README, routes React, pages Feed/Profile/Messages/Notifications/Settings, schéma Supabase et RLS.'
   },
+
   {
-    "slug": "garageapp",
-    "folder": "garageapp",
-    "title": "GarageApp — Application desktop de gestion de clients, véhicules et réparations",
-    "short": "Application Java Swing connectée à SQLite pour gérer l’activité d’un garage : clients, véhicules, réparations, coûts, statuts et historique. Le projet démontre la capacité à concevoir une application métier desktop avec base de données locale.",
-    "context": "GarageApp a été développé pour répondre à un cas métier concret : suivre les clients d’un garage, les véhicules confiés, les interventions en cours et l’historique des réparations.",
-    "problem": "Sans outil dédié, un garage risque de perdre le lien entre client, véhicule, réparation, statut et coût. Le projet centralise ces données dans une interface tabulaire exploitable.",
-    "value": "L’utilisateur gagne du temps dans la consultation, l’ajout, la modification et la suppression des informations. Les statuts de réparation et l’historique permettent de suivre l’activité avec plus de rigueur.",
-    "tech": [
-      "Java",
-      "Java Swing",
-      "JDBC",
-      "SQLite",
-      "JTable",
-      "DefaultTableModel",
-      "PreparedStatement",
-      "Architecture par panels",
-      "SQL",
-      "Git/GitHub"
+    slug: 'garageapp',
+    folder: 'garageapp',
+
+    title: 'Garage App',
+    fullTitle: 'GarageApp — Application desktop de gestion de clients, véhicules et réparations',
+    type: 'Gestion garage',
+    badge: 'Desktop métier',
+    level: 'Projet intermédiaire+',
+    category: 'Application desktop',
+    complexity: 'Desktop Java/SQLite',
+
+    image: '/assets/screenshots/garageapp-cover.jpg',
+    cover: '/assets/screenshots/garageapp-cover.jpg',
+    images: ['/assets/screenshots/garageapp-cover.jpg'],
+
+    short:
+      'Application Java Swing pour gérer clients, véhicules, réparations, coûts, statuts et historique.',
+
+    context:
+      'GarageApp répond à un cas métier concret : suivre les clients, véhicules confiés, réparations en cours et historique d’un garage.',
+
+    problem:
+      'Sans outil dédié, un garage peut perdre le lien entre client, véhicule, réparation, statut et coût.',
+
+    value:
+      'L’utilisateur gagne du temps dans l’ajout, la consultation, la modification et le suivi des réparations.',
+
+    highlight:
+      'Une application desktop métier avec interface tabulaire, base SQLite et gestion claire des réparations.',
+
+    tech: [
+      'Java',
+      'Java Swing',
+      'JDBC',
+      'SQLite',
+      'JTable',
+      'DefaultTableModel',
+      'PreparedStatement',
+      'SQL',
+      'Git/GitHub'
     ],
-    "features": [
-      "Gestion des clients",
-      "Gestion des véhicules",
-      "Association véhicule/propriétaire",
-      "Gestion des réparations",
-      "Statuts : en cours, terminé, en retard",
-      "Filtrage par statut",
-      "Affichage des coûts en Ariary",
-      "Historique et recherche",
-      "Interface à onglets",
-      "Boutons stylés avec effets hover",
-      "Connexion SQLite via JDBC"
+
+    features: [
+      'Gestion des clients',
+      'Gestion des véhicules',
+      'Association véhicule/propriétaire',
+      'Gestion des réparations',
+      'Statuts de réparation',
+      'Filtrage par statut',
+      'Coûts en Ariary',
+      'Historique et recherche',
+      'Interface à onglets',
+      'Connexion SQLite'
     ],
-    "modules_visible": [
-      "Onglet Gestion Clients / Véhicules",
-      "Onglet Réparations",
-      "Onglet Recherche / Historique",
-      "Tableaux JTable",
-      "Formulaires JOptionPane",
-      "Boutons Ajouter/Modifier/Supprimer",
-      "Filtre statut réparation"
+
+    modules_visible: [
+      'Gestion Clients / Véhicules',
+      'Réparations',
+      'Recherche / Historique',
+      'Tableaux JTable',
+      'Formulaires JOptionPane',
+      'Boutons Ajouter/Modifier/Supprimer'
     ],
-    "ux": [
-      "Interface desktop simple et directe",
-      "Onglets métier faciles à comprendre",
-      "Tables lisibles avec en-têtes colorés",
-      "Boutons différenciés par couleur selon action",
-      "Alignement des montants à droite",
-      "Retour utilisateur via boîtes de dialogue"
+
+    ux: [
+      'Interface desktop simple',
+      'Onglets métier clairs',
+      'Tables lisibles',
+      'Boutons différenciés',
+      'Retour utilisateur via boîtes de dialogue'
     ],
-    "challenges": [
-      "Créer une interface desktop organisée sans framework web",
-      "Connecter Java à une base SQLite locale",
-      "Synchroniser tables clients, véhicules et réparations",
-      "Mettre à jour les JTable après chaque opération",
-      "Calculer un statut affiché à partir des dates et du statut réel",
-      "Éviter les erreurs SQL grâce aux PreparedStatement"
+
+    challenges: [
+      'Créer une interface desktop organisée',
+      'Connecter Java à SQLite',
+      'Synchroniser clients, véhicules et réparations',
+      'Mettre à jour les tableaux',
+      'Éviter les erreurs SQL'
     ],
-    "solutions": [
-      "Découpage de l’interface en panels spécialisés",
-      "Utilisation d’un MainFrame avec JTabbedPane",
-      "Connexion centralisée dans DBConnection",
-      "Requêtes SQL préparées pour insert/update/delete",
-      "refreshTable après modification des données",
-      "TableRowSorter pour le tri des véhicules",
-      "Calcul du statut en retard selon la date de sortie"
+
+    solutions: [
+      'Interface découpée en panels',
+      'MainFrame avec JTabbedPane',
+      'Connexion centralisée',
+      'Requêtes SQL préparées',
+      'refreshTable après modification',
+      'Calcul du statut'
     ],
-    "skills": [
-      "POO Java appliquée à un cas métier",
-      "Création d’interfaces Swing",
-      "Manipulation JDBC/SQLite",
-      "Conception CRUD desktop",
-      "Structuration de panels réutilisables",
-      "Gestion d’événements UI",
-      "Formatage et affichage de données métier"
+
+    skills: [
+      'POO Java',
+      'Interfaces Swing',
+      'JDBC/SQLite',
+      'CRUD desktop',
+      'Gestion d’événements UI',
+      'Affichage de données métier'
     ],
-    "practices": [
-      "Séparation gui/model/util",
-      "Utilisation de PreparedStatement",
-      "Connexion centralisée",
-      "Composants UI cohérents",
-      "Gestion des exceptions SQL",
-      "Mise à jour contrôlée des tableaux",
-      "Modèle de données métier clair : Client, Véhicule, Réparation"
+
+    practices: [
+      'Séparation gui/model/util',
+      'PreparedStatement',
+      'Connexion centralisée',
+      'Gestion des exceptions SQL',
+      'Modèle métier clair'
     ],
-    "future": [
-      "Remplacer le chemin SQLite absolu par une configuration portable",
-      "Ajouter un module de facturation PDF",
-      "Ajouter recherche multicritère avancée",
-      "Ajouter validation de saisie plus stricte",
-      "Créer un installateur Windows",
-      "Migrer vers JavaFX pour une UI plus moderne",
-      "Ajouter sauvegarde/restauration de base"
+
+    future: [
+      'Configuration SQLite portable',
+      'Facturation PDF',
+      'Recherche multicritère',
+      'Validation de saisie',
+      'Installateur Windows',
+      'Migration JavaFX'
     ],
-    "recruiter": "Ce projet prouve que le développeur ne se limite pas au web : il sait construire une application métier desktop, manipuler une base relationnelle locale et structurer une interface exploitable pour un utilisateur non technique.",
-    "image": "/assets/screenshots/garageapp-cover.jpg",
-    "badge": "Desktop métier",
-    "level": "Projet intermédiaire+",
-    "sources": "Code inspecté : MainFrame, PanelClients, PanelVehicules, PanelReparations, DBConnection et modèles Java.",
-    "category": "Application desktop",
-    "complexity": "Desktop Java/SQLite",
-    "highlight": "L’utilisateur gagne du temps dans la consultation, l’ajout, la modification et la suppression des informations. Les statuts de réparation et l’historique permettent de suivre l’activité avec plus de rigueur."
+
+    recruiter:
+      'Ce projet montre la capacité à construire une application métier desktop, manipuler une base locale et structurer une interface exploitable.',
+
+    sources:
+      'Code inspecté : MainFrame, PanelClients, PanelVehicules, PanelReparations, DBConnection et modèles Java.'
   },
+
   {
-    "slug": "calculatrice",
-    "folder": "calculatrice",
-    "title": "Calculatrice Scientifique — Interface web inspirée CASIO avec fonctions avancées",
-    "short": "Calculatrice scientifique en HTML, CSS et JavaScript vanilla, avec fonctions trigonométriques, modes DEG/RAD/GRAD, SHIFT, historique, clavier physique et notation scientifique.",
-    "context": "Le projet transforme une interface simple de calculatrice en mini-application web interactive, sans framework, avec une logique de calcul enrichie et une UI inspirée d’une calculatrice scientifique.",
-    "problem": "Une calculatrice classique ne suffit pas pour les usages scientifiques : il faut gérer fonctions trigonométriques, puissances, parenthèses, mode d’angle, historique, erreurs et interaction clavier.",
-    "value": "L’utilisateur peut faire des calculs avancés rapidement dans une interface web légère, responsive et compréhensible visuellement.",
-    "tech": [
-      "HTML5",
-      "CSS3",
-      "JavaScript vanilla",
-      "DOM API",
-      "CSS Grid",
-      "Math API JavaScript",
-      "Événements clavier",
-      "Responsive design"
+    slug: 'calculatrice',
+    folder: 'calculatrice',
+
+    title: 'Calculatrice',
+    fullTitle: 'Calculatrice Scientifique — Interface web inspirée CASIO avec fonctions avancées',
+    type: 'Interface web',
+    badge: 'Frontend vanilla',
+    level: 'Projet frontend solide',
+    category: 'JavaScript avancé',
+    complexity: 'Logique algorithmique',
+
+    image: '/assets/screenshots/calculatrice-cover.jpg',
+    cover: '/assets/screenshots/calculatrice-cover.jpg',
+    images: ['/assets/screenshots/calculatrice-cover.jpg'],
+
+    short:
+      'Calculatrice scientifique responsive avec fonctions avancées, modes d’angle, clavier et historique.',
+
+    context:
+      'Le projet transforme une interface simple de calculatrice en mini-application web interactive sans framework.',
+
+    problem:
+      'Une calculatrice scientifique doit gérer fonctions trigonométriques, puissances, parenthèses, modes d’angle, historique et erreurs.',
+
+    value:
+      'L’utilisateur peut faire des calculs avancés rapidement dans une interface web légère et compréhensible.',
+
+    highlight:
+      'Un projet JavaScript pur qui montre la logique, l’interaction utilisateur et le design responsive.',
+
+    tech: [
+      'HTML5',
+      'CSS3',
+      'JavaScript vanilla',
+      'DOM API',
+      'CSS Grid',
+      'Math API JavaScript',
+      'Événements clavier',
+      'Responsive design'
     ],
-    "features": [
-      "Interface type calculatrice scientifique",
-      "Fonctions sin, cos, tan",
-      "Fonctions inverses via SHIFT",
-      "Fonctions hyperboliques",
-      "Factorielle",
-      "Pourcentage",
-      "Puissances et racines",
-      "Mode DEG/RAD/GRAD",
-      "Constante π et e",
-      "Random",
-      "ANS / dernier résultat",
-      "Historique d’expression",
-      "Gestion clavier physique",
-      "DEL et AC",
-      "Notation ingénieur"
+
+    features: [
+      'Interface type calculatrice scientifique',
+      'Fonctions sin, cos, tan',
+      'Fonctions inverses via SHIFT',
+      'Fonctions hyperboliques',
+      'Factorielle',
+      'Pourcentage',
+      'Puissances et racines',
+      'Mode DEG/RAD/GRAD',
+      'Constante π et e',
+      'ANS',
+      'Historique',
+      'Gestion clavier',
+      'DEL et AC',
+      'Notation ingénieur'
     ],
-    "modules_visible": [
-      "Écran résultat",
-      "Historique",
-      "Indicateur DEG/RAD/GRAD",
-      "Indicateur SHIFT",
-      "Grille de boutons scientifiques",
-      "Touches numériques",
-      "Touches opérateurs",
-      "Gestion clavier"
+
+    modules_visible: [
+      'Écran résultat',
+      'Historique',
+      'Indicateur DEG/RAD/GRAD',
+      'Indicateur SHIFT',
+      'Grille de boutons',
+      'Touches numériques',
+      'Touches opérateurs'
     ],
-    "ux": [
-      "Look réaliste de calculatrice",
-      "Boutons bien hiérarchisés par type",
-      "État SHIFT visible",
-      "Écran contrasté façon LCD",
-      "Feedback tactile via effet active",
-      "Grille compacte utilisable sur petit écran"
+
+    ux: [
+      'Look réaliste',
+      'Boutons hiérarchisés',
+      'État SHIFT visible',
+      'Écran contrasté',
+      'Feedback tactile',
+      'Grille compacte'
     ],
-    "challenges": [
-      "Traduire des symboles mathématiques lisibles en expressions calculables",
-      "Gérer les fonctions inverses sans conflit de remplacement",
-      "Adapter les calculs trigonométriques aux modes DEG/RAD/GRAD",
-      "Maintenir les parenthèses automatiquement",
-      "Gérer les erreurs sans casser l’interface",
-      "Permettre le clavier physique en plus des boutons"
+
+    challenges: [
+      'Traduire les symboles mathématiques',
+      'Gérer les fonctions inverses',
+      'Adapter les modes DEG/RAD/GRAD',
+      'Maintenir les parenthèses',
+      'Gérer les erreurs',
+      'Supporter le clavier'
     ],
-    "solutions": [
-      "Objet calc centralisant état et méthodes",
-      "Placeholders temporaires pour les fonctions trigonométriques",
-      "Remplacement progressif des symboles vers Math.*",
-      "Auto-fermeture des parenthèses ouvertes",
-      "Formatage exponentiel des résultats trop longs",
-      "Écouteur keydown pour mapper les touches clavier",
-      "Séparation HTML/CSS avec style dédié"
+
+    solutions: [
+      'Objet calc centralisé',
+      'Placeholders trigonométriques',
+      'Remplacement vers Math.*',
+      'Auto-fermeture des parenthèses',
+      'Formatage exponentiel',
+      'Écouteur keydown'
     ],
-    "skills": [
-      "JavaScript DOM sans framework",
-      "Gestion d’état côté client",
-      "Conception d’interface interactive",
-      "Logique mathématique appliquée",
-      "Gestion événementielle clavier/souris",
-      "CSS Grid et design responsive"
+
+    skills: [
+      'JavaScript DOM',
+      'Gestion d’état côté client',
+      'Interface interactive',
+      'Logique mathématique',
+      'Gestion clavier/souris',
+      'CSS Grid'
     ],
-    "practices": [
-      "Structure simple et lisible",
-      "Fonctions regroupées dans un objet unique",
-      "Gestion d’erreur try/catch",
-      "Prévention des comportements clavier indésirables",
-      "Utilisation cohérente de classes CSS",
-      "UI responsive basée sur grid"
+
+    practices: [
+      'Structure simple',
+      'Fonctions regroupées',
+      'try/catch',
+      'Classes CSS cohérentes',
+      'UI responsive'
     ],
-    "future": [
-      "Remplacer eval par un parser mathématique sécurisé",
-      "Ajouter mémoire M+/M-/MR",
-      "Ajouter historique persistant localStorage",
-      "Créer des tests unitaires pour les calculs",
-      "Ajouter mode sombre/clair",
-      "Améliorer accessibilité ARIA des boutons",
-      "Déployer en PWA offline"
+
+    future: [
+      'Parser mathématique sécurisé',
+      'Mémoire M+/M-/MR',
+      'Historique localStorage',
+      'Tests unitaires',
+      'Mode sombre/clair',
+      'Accessibilité ARIA',
+      'PWA offline'
     ],
-    "recruiter": "Projet intéressant pour évaluer la maîtrise JavaScript pure : il montre la capacité à manipuler le DOM, gérer un état applicatif, traduire une interface complexe en logique fonctionnelle et produire une UI soignée sans dépendance lourde.",
-    "image": "/assets/screenshots/calculatrice-cover.jpg",
-    "badge": "Frontend vanilla",
-    "level": "Projet frontend solide",
-    "sources": "Code inspecté : index.html, style.css, objet calc, gestion des fonctions scientifiques et du clavier.",
-    "category": "JavaScript avancé",
-    "complexity": "Logique algorithmique",
-    "highlight": "L’utilisateur peut faire des calculs avancés rapidement dans une interface web légère, responsive et compréhensible visuellement."
+
+    recruiter:
+      'Projet utile pour évaluer la maîtrise JavaScript pure : manipulation DOM, gestion d’état, logique fonctionnelle et UI soignée.',
+
+    sources:
+      'Code inspecté : index.html, style.css, objet calc, gestion des fonctions scientifiques et du clavier.'
   },
+
   {
-    "slug": "portfolio",
-    "folder": "portfolio",
-    "title": "Portfolio Fullstack — Vitrine professionnelle orientée recrutement et freelance",
-    "short": "Refonte du portfolio personnel pour présenter un profil développeur Fullstack de façon claire, crédible et orientée conversion : projets, compétences, preuves techniques, contact.",
-    "context": "Le portfolio actuel contient déjà une base Vue.js avec Hero, projets, compétences et contact. La refonte vise à passer d’un portfolio visuellement agréable mais encore générique à une vitrine structurée pour recruteurs et clients freelance.",
-    "problem": "Un portfolio peut être joli mais inefficace s’il ne prouve pas la valeur métier, les responsabilités techniques et les résultats concrets des projets. L’enjeu est de rendre chaque projet lisible en moins de 30 secondes, puis détaillé pour les recruteurs techniques.",
-    "value": "Le recruteur comprend immédiatement le positionnement Fullstack, les technologies maîtrisées, les projets les plus solides et les preuves d’autonomie de développement de A à Z.",
-    "tech": [
-      "HTML5",
-      "CSS3",
-      "JavaScript",
-      "Vue.js dans la version existante",
-      "Vite",
-      "Tailwind CSS dans la version existante",
-      "Lucide icons dans la version existante",
-      "Structure claire",
-      "JSON-LD",
-      "Responsive design",
-      "Git/GitHub"
+    slug: 'portfolio',
+    folder: 'portfolio',
+
+    title: 'Portfolio',
+    fullTitle: 'Portfolio Fullstack — Vitrine professionnelle orientée recrutement et freelance',
+    type: 'Portfolio web',
+    badge: 'Personal branding tech',
+    level: 'Projet vitrine professionnel',
+    category: 'Frontend & personal branding',
+    complexity: 'UI & responsive design',
+
+    image: '/assets/screenshots/cv-interactif.png',
+    cover: '/assets/screenshots/cv-interactif.png',
+    images: ['/assets/screenshots/cv-interactif.png'],
+
+    short:
+      'Portfolio professionnel pour présenter profil, compétences, projets, preuves techniques et contact.',
+
+    context:
+      'La refonte transforme un portfolio classique en vitrine claire pour recruteurs, clients et opportunités freelance.',
+
+    problem:
+      'Un portfolio peut être joli mais inefficace s’il ne montre pas clairement la valeur, les projets et les compétences.',
+
+    value:
+      'Le recruteur ou client comprend rapidement le positionnement fullstack, les technologies maîtrisées et les projets réalisés.',
+
+    highlight:
+      'Un portfolio clair, responsive et orienté conversion pour présenter un profil développeur de manière professionnelle.',
+
+    tech: [
+      'Vue.js',
+      'Vite',
+      'HTML5',
+      'CSS3',
+      'JavaScript',
+      'Responsive design',
+      'Git/GitHub',
+      'Netlify'
     ],
-    "features": [
-      "Hero professionnel",
-      "Positionnement Fullstack clair",
-      "Cartes projets détaillées",
-      "Filtres par type de projet",
-      "Section compétences",
-      "Preuves techniques par projet",
-      "CTA recruteur/freelance",
-      "Contact email/GitHub/LinkedIn",
-      "Design clair et responsive",
-      "Structure déployable Vercel/Netlify"
+
+    features: [
+      'Hero professionnel',
+      'Positionnement Fullstack clair',
+      'Cartes projets',
+      'Section compétences',
+      'Contact direct',
+      'Design responsive',
+      'Navigation sticky',
+      'Footer professionnel'
     ],
-    "modules_visible": [
-      "Navbar",
-      "Hero",
-      "Réalisations",
-      "Compétences",
-      "Contact",
-      "Footer",
-      "Cartes projet",
-      "Liens GitHub/LinkedIn"
+
+    modules_visible: [
+      'Navbar',
+      'Hero',
+      'Projets',
+      'Compétences',
+      'Contact',
+      'Footer',
+      'Cartes projet'
     ],
-    "ux": [
-      "Design clair, sobre et crédible",
-      "Ombres nettes mais non agressives",
-      "Hiérarchie visuelle forte",
-      "Navigation sticky",
-      "Sections courtes pour scan rapide",
-      "Détails accessibles sans surcharge"
+
+    ux: [
+      'Design sobre et crédible',
+      'Hiérarchie visuelle claire',
+      'Sections courtes',
+      'Navigation fluide',
+      'Lecture rapide',
+      'Responsive mobile'
     ],
-    "challenges": [
-      "Clarifier le positionnement sans disperser le profil",
-      "Éviter les textes génériques de portfolio",
-      "Présenter les projets avec une vraie narration technique",
-      "Rendre le site léger et déployable sans configuration lourde",
-      "Conserver une image professionnelle sur mobile"
+
+    challenges: [
+      'Clarifier le positionnement',
+      'Éviter les textes génériques',
+      'Présenter les projets rapidement',
+      'Garder le site léger',
+      'Conserver une image professionnelle sur mobile'
     ],
-    "solutions": [
-      "Nouvelle structure statique claire et légère",
-      "Descriptions projet basées sur le code réellement inspecté",
-      "Palette claire avec bleu/teal professionnel",
-      "Cards avec ombres définies",
-      "Pages dédiées par projet",
-      "Documentation détaillée jointe",
-      "Structure HTML simple et lisible"
+
+    solutions: [
+      'Structure simple',
+      'Descriptions projet plus claires',
+      'Cartes visuelles',
+      'Contact direct',
+      'Thème sombre premium',
+      'Optimisation responsive'
     ],
-    "skills": [
-      "Rédaction technique orientée recrutement",
-      "UX de portfolio professionnel",
-      "Clarté du contenu",
-      "Structuration d’un site vitrine",
-      "Design responsive",
-      "Valorisation de projets fullstack"
+
+    skills: [
+      'UX de portfolio',
+      'Clarté du contenu',
+      'Design responsive',
+      'Structuration site vitrine',
+      'Valorisation de projets'
     ],
-    "practices": [
-      "HTML sémantique",
-      "Meta title/description",
-      "Open Graph",
-      "JSON-LD Person",
-      "Images optimisées",
-      "CSS variables",
-      "Navigation accessible",
-      "Structure de dossiers claire",
-      "Compatibilité hébergement statique"
+
+    practices: [
+      'HTML sémantique',
+      'CSS variables',
+      'Navigation accessible',
+      'Images optimisées',
+      'Structure claire',
+      'Déploiement statique'
     ],
-    "future": [
-      "Ajouter blog technique court",
-      "Ajouter version anglaise",
-      "Ajouter scores Lighthouse après déploiement",
-      "Brancher un formulaire serverless",
-      "Ajouter captures réelles de chaque projet",
-      "Ajouter CV PDF téléchargeable",
-      "Ajouter analytics privacy-friendly"
+
+    future: [
+      'Version anglaise',
+      'Blog technique court',
+      'CV PDF téléchargeable',
+      'Analytics privacy-friendly',
+      'Formulaire serverless',
+      'Scores Lighthouse'
     ],
-    "recruiter": "Cette refonte positionne le développeur comme un profil capable de livrer des applications complètes, pas seulement des interfaces. Elle transforme les projets en preuves concrètes de compétence technique et de maturité produit.",
-    "image": "/assets/screenshots/cv-interactif.png",
-    "badge": "Personal branding tech",
-    "level": "Projet vitrine professionnel",
-    "sources": "Code inspecté : portfolio Vue existant, Hero, compétences, réalisations, données projets et styles.",
-    "category": "Frontend & personal branding",
-    "complexity": "UI & responsive design",
-    "highlight": "Le recruteur comprend immédiatement le positionnement Fullstack, les technologies maîtrisées, les projets les plus solides et les preuves d’autonomie de développement de A à Z."
+
+    recruiter:
+      'Cette refonte montre une capacité à présenter un profil technique de façon claire, crédible et orientée opportunités.',
+
+    sources:
+      'Code inspecté : portfolio Vue existant, Hero, compétences, réalisations, données projets et styles.'
   },
+
   {
-    "slug": "petites-annonces",
-    "folder": "petites-annonces",
-    "title": "Marketplace Petites Annonces — Publication, recherche et gestion d’annonces",
-    "short": "Application fullstack React/Express/MySQL permettant de publier, rechercher, consulter et gérer des annonces avec authentification JWT et upload d’images.",
-    "context": "Le projet répond à un besoin de plateforme locale de petites annonces : permettre aux utilisateurs de créer un compte, publier des produits/services, ajouter des images et retrouver les annonces par recherche ou catégorie.",
-    "problem": "La difficulté est d’orchestrer l’authentification, les fichiers images, les droits de modification/suppression et l’expérience de recherche dans une application cohérente.",
-    "value": "L’utilisateur peut publier rapidement une annonce, visualiser les images, filtrer les contenus, gérer ses propres annonces et modifier son profil.",
-    "tech": [
-      "React",
-      "Vite",
-      "React Router",
-      "Axios",
-      "React Icons",
-      "React Modal",
-      "Node.js",
-      "Express.js",
-      "MySQL",
-      "mysql2",
-      "JWT",
-      "bcrypt / bcryptjs",
-      "Multer",
-      "CORS",
-      "dotenv",
-      "Nodemon",
-      "Git/GitHub"
+    slug: 'petites-annonces',
+    folder: 'petites-annonces',
+
+    title: 'Petites annonces',
+    fullTitle: 'Marketplace Petites Annonces — Publication, recherche et gestion d’annonces',
+    type: 'Application annonces',
+    badge: 'Marketplace fullstack',
+    level: 'Projet fullstack',
+    category: 'Marketplace',
+    complexity: 'CRUD & parcours utilisateur',
+
+    image: '/assets/screenshots/petites-annonces.png',
+    cover: '/assets/screenshots/petites-annonces.png',
+    images: ['/assets/screenshots/petites-annonces.png'],
+
+    short:
+      'Application fullstack pour publier, rechercher, consulter et gérer des petites annonces avec images.',
+
+    context:
+      'Le projet répond à un besoin de plateforme locale de petites annonces avec comptes utilisateurs, images, recherche et catégories.',
+
+    problem:
+      'La difficulté est d’orchestrer l’authentification, les images, les droits utilisateur et l’expérience de recherche.',
+
+    value:
+      'L’utilisateur peut publier rapidement une annonce, visualiser les images, filtrer les contenus et gérer ses propres annonces.',
+
+    highlight:
+      'Une marketplace simple et complète avec authentification, upload images, recherche et gestion des annonces.',
+
+    tech: [
+      'React',
+      'Vite',
+      'React Router',
+      'Axios',
+      'React Icons',
+      'Node.js',
+      'Express.js',
+      'MySQL',
+      'JWT',
+      'bcrypt',
+      'Multer',
+      'CORS',
+      'dotenv',
+      'Git/GitHub'
     ],
-    "features": [
-      "Connexion/inscription",
-      "Routes frontend protégées",
-      "Accueil annonces",
-      "Recherche par titre, description ou localisation",
-      "Filtre par catégorie",
-      "Détail d’annonce en modal ou page dédiée",
-      "Upload multi-images jusqu’à 5 fichiers",
-      "Publication d’annonce",
-      "Gestion de mes annonces",
-      "Profil utilisateur",
-      "Intercepteur Axios pour token",
-      "Backend statique /uploads pour images"
+
+    features: [
+      'Connexion et inscription',
+      'Routes protégées',
+      'Accueil annonces',
+      'Recherche par titre, description ou localisation',
+      'Filtre par catégorie',
+      'Détail d’annonce',
+      'Upload multi-images',
+      'Publication d’annonce',
+      'Gestion de mes annonces',
+      'Profil utilisateur',
+      'Token via Axios',
+      'Backend /uploads pour images'
     ],
-    "modules_visible": [
-      "LoginRegister",
-      "HomeAds",
-      "AdsList",
-      "AdDetails",
-      "Publish",
-      "MyAds",
-      "Profile",
-      "Navbar",
-      "API Axios",
-      "Routes auth/ads/users"
+
+    modules_visible: [
+      'LoginRegister',
+      'HomeAds',
+      'AdsList',
+      'AdDetails',
+      'Publish',
+      'MyAds',
+      'Profile',
+      'Navbar',
+      'API Axios'
     ],
-    "ux": [
-      "Grille d’annonces avec cards visuelles",
-      "Recherche et filtre groupés",
-      "Badges utilisateur sur carte",
-      "Modal de détail lisible",
-      "Prévisualisation des images avant publication",
-      "Navigation conditionnelle selon connexion"
+
+    ux: [
+      'Grille d’annonces avec cards',
+      'Recherche et filtre groupés',
+      'Badges utilisateur',
+      'Détail lisible',
+      'Prévisualisation images',
+      'Navigation selon connexion'
     ],
-    "challenges": [
-      "Gérer l’upload multi-images avec Express/Multer",
-      "Protéger les actions de publication/modification/suppression",
-      "Relier annonces et utilisateurs",
-      "Synchroniser localStorage, token et requêtes Axios",
-      "Créer une recherche utile sans backend complexe",
-      "Servir les images uploadées depuis le backend"
+
+    challenges: [
+      'Gérer l’upload multi-images',
+      'Protéger les actions sensibles',
+      'Relier annonces et utilisateurs',
+      'Synchroniser token et requêtes Axios',
+      'Créer une recherche utile',
+      'Servir les images uploadées'
     ],
-    "solutions": [
-      "Multer upload.array pour limiter les images",
-      "Middleware authenticateToken sur routes sensibles",
-      "Axios interceptor pour ajouter Authorization automatiquement",
-      "Routes séparées auth, ads et users",
-      "Stockage des fichiers dans /uploads exposé statiquement",
-      "Filtrage côté frontend sur titre, description, localisation et catégorie"
+
+    solutions: [
+      'Multer upload.array',
+      'Middleware authenticateToken',
+      'Axios interceptor',
+      'Routes auth, ads et users',
+      'Dossier uploads exposé statiquement',
+      'Filtrage côté frontend'
     ],
-    "skills": [
-      "Création d’une marketplace fullstack",
-      "Auth JWT côté client/serveur",
-      "Gestion d’uploads images",
-      "CRUD sécurisé",
-      "Architecture API REST",
-      "Design de cards produit",
-      "Workflow de publication"
+
+    skills: [
+      'Marketplace fullstack',
+      'Auth JWT',
+      'Upload images',
+      'CRUD sécurisé',
+      'API REST',
+      'Cards produit',
+      'Workflow de publication'
     ],
-    "practices": [
-      "Séparation frontend/backend",
-      "Routes protégées",
-      "Hashage mot de passe",
-      "JWT pour session",
-      "FormData pour fichiers",
-      "Composants pages séparés",
-      "Configuration par variables d’environnement",
-      "Serveur statique pour médias"
+
+    practices: [
+      'Séparation frontend/backend',
+      'Routes protégées',
+      'Hashage mot de passe',
+      'JWT',
+      'FormData',
+      'Composants séparés',
+      'Variables d’environnement'
     ],
-    "future": [
-      "Ajouter pagination serveur",
-      "Ajouter recherche SQL avancée",
-      "Compresser les images avant upload",
-      "Ajouter messagerie entre vendeur et acheteur",
-      "Ajouter modération d’annonces",
-      "Ajouter favoris",
-      "Préparer Docker + déploiement cloud"
+
+    future: [
+      'Pagination serveur',
+      'Recherche SQL avancée',
+      'Compression images',
+      'Messagerie vendeur/acheteur',
+      'Modération annonces',
+      'Favoris',
+      'Déploiement cloud'
     ],
-    "recruiter": "Projet très parlant pour des missions web : il couvre un cycle complet utilisateur, une API REST, l’authentification, l’upload de fichiers et une interface orientée conversion.",
-    "image": "/assets/screenshots/petites-annonces.png",
-    "badge": "Marketplace fullstack",
-    "level": "Projet fullstack",
-    "sources": "Code inspecté : backend Express routes ads/auth/users, frontend React App, HomeAds, Publish et API Axios.",
-    "category": "Marketplace",
-    "complexity": "CRUD & parcours utilisateur",
-    "highlight": "L’utilisateur peut publier rapidement une annonce, visualiser les images, filtrer les contenus, gérer ses propres annonces et modifier son profil."
+
+    recruiter:
+      'Projet parlant pour des missions web : il couvre un cycle complet utilisateur, une API REST, l’authentification, l’upload et une interface orientée conversion.',
+
+    sources:
+      'Code inspecté : backend Express routes ads/auth/users, frontend React App, HomeAds, Publish et API Axios.'
   }
 ]
 

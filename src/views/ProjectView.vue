@@ -1,96 +1,134 @@
 <template>
-  <section v-if="project" class="project-page section-pad">
-    <div class="project-topbar">
-      <RouterLink class="back-link" to="/#projets">← Retour aux projets</RouterLink>
-      <RouterLink class="back-link muted" to="/">Accueil</RouterLink>
-    </div>
+  <main class="project-screen section-pad">
+    <RouterLink to="/#projets" class="project-screen-back">
+      ← Retour aux projets
+    </RouterLink>
 
-    <div class="project-hero-detail">
-      <div class="project-detail-copy">
-        <span class="eyebrow clean">{{ project.category }}</span>
-        <h1>{{ project.title }}</h1>
-        <p>{{ project.short }}</p>
-        <div class="project-tags large">
-          <span v-for="tech in project.tech" :key="tech">{{ tech }}</span>
+    <section class="project-screen-panel">
+      <div class="project-screen-visual">
+        <img
+          :src="project.image"
+          :alt="`Aperçu du projet ${project.title}`"
+        />
+
+        <div class="project-screen-visual-overlay">
+          <span>{{ project.type || project.category }}</span>
+          <h1>{{ project.title }}</h1>
         </div>
       </div>
-      <img :src="project.image" :alt="`Capture ou visuel du projet ${project.title}`" />
-    </div>
 
-    <div class="project-detail-workspace">
-      <aside class="detail-tabs" aria-label="Informations du projet">
-        <button
-          v-for="section in sections"
-          :key="section.key"
-          type="button"
-          :class="{ active: activeTab === section.key }"
-          @click="activeTab = section.key"
-        >
-          {{ section.title }}
-        </button>
-      </aside>
+      <div class="project-screen-content">
+        <header class="project-screen-header">
+          <div class="project-screen-meta">
+            <span v-if="project.category">
+              {{ project.category }}
+            </span>
 
-      <article class="detail-panel">
-        <span class="detail-count">{{ activeIndex + 1 }} / {{ sections.length }}</span>
-        <h2>{{ activeSection.title }}</h2>
+            <span v-if="project.complexity">
+              {{ project.complexity }}
+            </span>
 
-        <div v-if="activeSection.blocks" class="overview-grid">
-          <div v-for="block in activeSection.blocks" :key="block.title" class="overview-card">
-            <h3>{{ block.title }}</h3>
-            <p>{{ block.text }}</p>
+            <span v-if="databaseLabel" class="project-database-meta">
+              Base : {{ databaseLabel }}
+            </span>
           </div>
+
+          <h2>{{ project.fullTitle || project.title }}</h2>
+
+          <p>{{ project.short }}</p>
+        </header>
+
+        <div class="project-screen-tech">
+          <span v-for="tech in limitedTech" :key="tech">
+            {{ tech }}
+          </span>
         </div>
 
-        <p v-if="activeSection.text" class="detail-text">{{ activeSection.text }}</p>
+        <div class="project-screen-grid">
+          <article class="project-screen-card">
+            <small>Objectif</small>
+            <h3>Ce que le projet résout</h3>
+            <p>{{ project.value || project.context }}</p>
+          </article>
 
-        <ul v-if="activeSection.items?.length" class="detail-list compact-columns">
-          <li v-for="item in activeSection.items" :key="item">{{ item }}</li>
-        </ul>
-      </article>
-    </div>
-  </section>
+          <article class="project-screen-card">
+            <small>Fonctionnalités</small>
+            <h3>Ce qu’il permet</h3>
+            <ul>
+              <li v-for="item in limitedFeatures" :key="item">
+                {{ item }}
+              </li>
+            </ul>
+          </article>
 
-  <NotFoundView v-else />
+          <article class="project-screen-card">
+            <small>UI/UX</small>
+            <h3>Expérience utilisateur</h3>
+            <ul>
+              <li v-for="item in limitedUx" :key="item">
+                {{ item }}
+              </li>
+            </ul>
+          </article>
+
+          <article class="project-screen-card">
+            <small>Compétences</small>
+            <h3>Ce que ce projet montre</h3>
+            <ul>
+              <li v-for="item in limitedSkills" :key="item">
+                {{ item }}
+              </li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
 </template>
 
 <script setup>
-import { computed, ref, watch } from 'vue'
-import { useRoute } from 'vue-router'
+import { computed, onBeforeUnmount, onMounted } from 'vue'
+import { RouterLink, useRoute } from 'vue-router'
 import { projects } from '../data/projects'
-import NotFoundView from './NotFoundView.vue'
 
 const route = useRoute()
-const activeTab = ref('resume')
-const project = computed(() => projects.find((item) => item.slug === route.params.slug))
 
-const sections = computed(() => {
-  const item = project.value
-  if (!item) return []
-  return [
-    {
-      key: 'resume',
-      title: 'Résumé',
-      blocks: [
-        { title: 'Contexte', text: item.context },
-        { title: 'Problème résolu', text: item.problem },
-        { title: 'Valeur utilisateur', text: item.value }
-      ]
-    },
-    { key: 'fonctionnalites', title: 'Fonctionnalités principales', items: item.features },
-    { key: 'modules', title: 'Modules visibles / développés', items: item.modules_visible },
-    { key: 'ux', title: 'Analyse UX/UI', items: item.ux },
-    { key: 'defis', title: 'Défis techniques rencontrés', items: item.challenges },
-    { key: 'solutions', title: 'Solutions mises en œuvre', items: item.solutions },
-    { key: 'competences', title: 'Compétences acquises', items: item.skills },
-    { key: 'pratiques', title: 'Bonnes pratiques appliquées', items: item.practices || item.best_practices },
-    { key: 'ameliorations', title: 'Améliorations futures possibles', items: item.future || item.future_improvements }
-  ].filter((section) => section.blocks || section.text || section.items?.length)
+const project = computed(() => {
+  return projects.find((item) => item.slug === route.params.slug) || projects[0]
 })
 
-const activeIndex = computed(() => Math.max(0, sections.value.findIndex((section) => section.key === activeTab.value)))
-const activeSection = computed(() => sections.value[activeIndex.value] || sections.value[0] || { title: '', items: [] })
+const databaseByProject = {
+  'projet-rh': 'MySQL',
+  'reseau-social': 'Supabase PostgreSQL',
+  garageapp: 'SQLite',
+  'petites-annonces': 'MySQL'
+}
 
-watch(project, () => {
-  activeTab.value = 'resume'
+const databaseLabel = computed(() => {
+  return project.value.database || databaseByProject[project.value.slug] || ''
+})
+
+const limitedTech = computed(() => {
+  return (project.value.tech || []).slice(0, 6)
+})
+
+const limitedFeatures = computed(() => {
+  return (project.value.features || []).slice(0, 3)
+})
+
+const limitedUx = computed(() => {
+  return (project.value.ux || []).slice(0, 3)
+})
+
+const limitedSkills = computed(() => {
+  return (project.value.skills || []).slice(0, 3)
+})
+
+onMounted(() => {
+  document.body.classList.add('project-detail-page')
+})
+
+onBeforeUnmount(() => {
+  document.body.classList.remove('project-detail-page')
 })
 </script>
