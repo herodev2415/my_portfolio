@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title desc">
+  <title id="title">HA — Heritiana</title>
+  <desc id="desc">Monogramme HA dans un symbole arrondi avec une flèche discrète vers l'avant.</desc>
+  <defs>
+    <linearGradient id="bg" x1="18" y1="12" x2="114" y2="120" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFB879"/>
+      <stop offset="1" stop-color="#FF7A43"/>
+    </linearGradient>
+    <linearGradient id="shine" x1="28" y1="24" x2="96" y2="96" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFDF8"/>
+      <stop offset="1" stop-color="#FFF1E4"/>
+    </linearGradient>
+  </defs>
+  <rect x="8" y="8" width="112" height="112" rx="34" fill="#17201E"/>
+  <path d="M25 27C25 20.925 29.925 16 36 16h56c11.046 0 20 8.954 20 20v56c0 11.046-8.954 20-20 20H36c-6.075 0-11-4.925-11-11V27Z" fill="url(#bg)"/>
+  <path d="M39 40v49M39 64h28M68 40v49" stroke="url(#shine)" stroke-width="10" stroke-linecap="round"/>
+  <path d="M74 88 88 42l14 46M80 72h16" stroke="#17201E" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M94 26h14v14" fill="none" stroke="#17201E" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="m107 27-15 15" stroke="#17201E" stroke-width="5" stroke-linecap="round"/>
+</svg>

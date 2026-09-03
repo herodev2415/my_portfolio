@@ -1,0 +1,1 @@
+{"redirects":[{"source":"/projets/:path*","destination":"/","permanent":true},{"source":"/documentation","destination":"/","permanent":true}],"rewrites":[{"source":"/(.*)","destination":"/index.html"}]}
