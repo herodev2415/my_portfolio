@@ -150,35 +150,37 @@
           </div>
         </a>
 
-        <!-- BUSINESS ENGLISH : INCHANGÉ -->
-        <article class="lp-project lp-project--trainer">
-          <div class="lp-project__preview">
-            <div class="lp-preview-card lp-preview-card--warm">
-              <small>FORMATION BUSINESS ENGLISH</small>
-
-              <strong>
-                Parlez avec plus d’aisance dans vos situations professionnelles.
-              </strong>
-
-              <span>
-                Réunions · présentations · appels clients
-              </span>
-
-              <i>Réserver mon évaluation</i>
-            </div>
+        <!-- BUSINESS ENGLISH : CARTE ENTIÈRE CLIQUABLE -->
+        <a
+          href="https://business-english-pro.netlify.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="lp-project lp-project--trainer lp-project--clickable"
+          aria-label="Voir la landing page Business English"
+        >
+          <div class="lp-project__preview lp-project__preview--image">
+            <img
+              src="/assets/images/english.png"
+              alt="Aperçu réel de la landing page Business English"
+              loading="lazy"
+            />
           </div>
 
           <div class="lp-project__copy">
-            <span>Projet conceptuel</span>
+            <span>Landing Page</span>
 
             <h3>Business English</h3>
 
             <p>
-              La page vend l’aisance professionnelle,
-              pas une liste de cours.
+              Une page claire pour présenter la formation
+              et guider vers l’inscription.
             </p>
+
+            <strong class="lp-project__visit">
+              Voir la landing page →
+            </strong>
           </div>
-        </article>
+        </a>
 
         <!-- PORTFOLIO : CARTE ENTIÈRE CLIQUABLE -->
         <a
